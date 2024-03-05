@@ -4,7 +4,7 @@ import toggleSlice from "./toggleSlice";
 const store = configureStore({
   reducer:{
   users:Slice,
-  toggle:toggleSlice
+  toggle:toggleSlice,
   }  
 })
 

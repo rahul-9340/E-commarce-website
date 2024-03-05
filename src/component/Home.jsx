@@ -10,7 +10,6 @@ const[value,setValue] = useState("")
 useEffect(()=>{
   dispatch(FetchProducts())
 },[])
-
 useEffect(()=>{
 dispatch(SetFilter(value))
 },[value])

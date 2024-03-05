@@ -1,12 +1,8 @@
 import React from 'react'
+import { useState } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
-import { AddCart } from '../Redux/Slice'
 
 export default function Products({items}) {
-   const dispatch = useDispatch()
-function addtocart(id){
-dispatch(AddCart(id))
-}
 
   return (
    <>
@@ -17,7 +13,7 @@ dispatch(AddCart(id))
 <div>{items.description.slice(0,50)}...</div>
 <div>Price:{items.price}$</div>
 <div>Rating {items.rating.rate}</div>
-<button onClick={()=>addtocart(items.id)} className='addCart-btn'>Add To Cart</button>
+<button className='addCart-btn'>Add to Cart</button>
 </div>
 </div>
    </>

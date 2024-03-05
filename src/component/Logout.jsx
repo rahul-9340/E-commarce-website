@@ -1,9 +1,14 @@
 import React from 'react'
 
 export default function Logout() {
+ 
   return (
     <div>
-      <button>Logout</button>
+      <button className='logout-btn'>Logout</button>
     </div>
   )
 }
+
+
+
+

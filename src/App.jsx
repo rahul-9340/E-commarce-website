@@ -11,6 +11,8 @@ const Cart =  LazyLoading("./component/Cart","Cart")
 const Login = LazyLoading("./component/Login")
 const Profile= LazyLoading("./component/Profile")
 const Signup = LazyLoading('./component/Signup')
+import PrivateRoute from './PrivateRoute';
+
 
 function App() {
   return (
@@ -20,9 +22,9 @@ function App() {
 <Routes>
 <Route path='/' element={<Home/>}/>
 <Route path='/about' element={<About/>}/>
-<Route path='/cart' element={<Cart/>}/>
 <Route path='/login' element={<Login/>}/>
 <Route path='/Profile' element={<Profile/>}/>
+<Route path='/cart' element={<Cart/>}/>
 <Route path='/signup' element={<Signup/>}/>
 </Routes>
 </Suspense>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { switchClass } from '../Redux/toggleSlice'
+import Logout from './Logout'
 export default function Navbar() {
 const {isactive,theme}= useSelector((state)=>state.toggle)
 const dispatch = useDispatch()
@@ -28,7 +29,11 @@ useEffect(() => {
   <div className={`switch-mode ${isactive&&`active-mode`} `}></div>
 </div>
 <Link className='a' to="/profile">Profile</Link>
+
 <Link className='a' to="/login"><button className='login-btn'>Login</button></Link>
+
+
+
 </div>
 </div>
   )

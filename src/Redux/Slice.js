@@ -1,6 +1,6 @@
 import FetchProducts from "./Actions";
 import { createSlice, miniSerializeError } from "@reduxjs/toolkit";
-
+import { useSelector } from "react-redux";
 const Slice = createSlice({
 name:"user",
 initialState:{
@@ -10,23 +10,10 @@ initialState:{
 filterData:[],
 cart:[]
 },
-
 reducers:{
 SetFilter:(state,action)=>{state.filterData = state.users.filter((items)=>{
   return items.title.toLowerCase().includes(action.payload.toLowerCase().trim())  
 })},
-AddCart:(state,action)=>{
- state.users.forEach((items)=>{ 
- if(items.id == action.payload){
- state.cart.push(items)
- }
-})
-},
-RemoveCart:(state,action)=>{
-state.cart = state.cart.filter((items)=>{
-  return items.id != action.payload
-})
-}
 
 },
 extraReducers:(builders)=>{
@@ -46,9 +33,12 @@ builders.addCase(FetchProducts.rejected,(state,action)=>{
 }
 })
 
-export const {SetFilter,AddCart,RemoveCart} = Slice.actions
+export const {SetFilter} = Slice.actions
 
 export default Slice.reducer
+
+
+
 
 
 
