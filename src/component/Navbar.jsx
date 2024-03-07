@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { switchClass } from '../Redux/toggleSlice'
+import { signOut } from 'firebase/auth'
+import { useAuthState } from 'react-firebase-hooks/auth'
 import Logout from './Logout'
+import { auth } from '../firebaseConfig'
 export default function Navbar() {
 const {isactive,theme}= useSelector((state)=>state.toggle)
 const dispatch = useDispatch()
 
+const [user,error,loading] = useAuthState(auth)
 
 function toggleClass(){
 dispatch(switchClass())
@@ -29,8 +33,11 @@ useEffect(() => {
   <div className={`switch-mode ${isactive&&`active-mode`} `}></div>
 </div>
 <Link className='a' to="/profile">Profile</Link>
+{
+!user?<Link className='a' to="/login"><button className='login-btn'>Login</button></Link>:
+<Logout/>
 
-<Link className='a' to="/login"><button className='login-btn'>Login</button></Link>
+}
 
 
 

@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+
+
 export const Cart = function Cart() {
- 
-  return (
+
+ const dispatch = useDispatch()
+
+
+ return (
    <div>
-    cart
+      CART
    </div>
   );
 };
