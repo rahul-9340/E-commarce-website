@@ -18,7 +18,7 @@ dispatch(switchClass())
 }
 useEffect(() => {
   document.body.setAttribute("data-theme",`${theme}`);
-}, [theme]);
+},[theme]);
 
   return (
  <div className='nav-main'>
@@ -36,7 +36,6 @@ useEffect(() => {
 {
 !user?<Link className='a' to="/login"><button className='login-btn'>Login</button></Link>:
 <Logout/>
-
 }
 
 

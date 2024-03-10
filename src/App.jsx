@@ -4,6 +4,7 @@ import React from 'react';
 import { Routes,Route, BrowserRouter } from 'react-router-dom';
 import Loading from './component/Loading';
 import { Suspense } from 'react';
+import FetchProducts from './Redux/Actions';
 import LazyLoading from './LazyLoading';
 const Home = LazyLoading("./component/Home")
 const About = LazyLoading("./component/About")
@@ -19,6 +20,10 @@ function App() {
 
 const dispatch = useDispatch()
 
+
+useEffect(()=>{
+  dispatch(FetchProducts())
+},[])
 
   return (
    <div>

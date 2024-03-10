@@ -7,7 +7,7 @@ export default function LazyLoading(path,namedComponent) {
     }
     else{
     return lazy(()=>import(/* @vite-ignore */path).then((module)=>{
-        return{
+        return{  
         default:module[namedComponent]
        } 
     }))
@@ -16,4 +16,6 @@ export default function LazyLoading(path,namedComponent) {
 
 
     
+
+
 

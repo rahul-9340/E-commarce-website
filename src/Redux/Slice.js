@@ -4,11 +4,10 @@ import { useSelector } from "react-redux";
 const Slice = createSlice({
 name:"user",
 initialState:{
-  users:[] ,
+  users:[],
   isloading:false,
   error:null,
 filterData:[],
-cart:[]
 },
 reducers:{
 SetFilter:(state,action)=>{state.filterData = state.users.filter((items)=>{
