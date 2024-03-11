@@ -15,7 +15,7 @@ useEffect(()=>{
   },[])
 
  return (
-   <>  
+   <div className="product-list">  
    {
 CartItems&&CartItems.length>0 ? CartItems.map((items)=>(
  <Products key={items.id} items={items}/>
@@ -23,7 +23,7 @@ CartItems&&CartItems.length>0 ? CartItems.map((items)=>(
 <p>ADD SOMETHING TO CART !</p>
 </div>
    }
-   </>
+   </div>
   );
 };
 

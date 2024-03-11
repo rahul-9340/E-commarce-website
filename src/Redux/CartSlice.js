@@ -28,9 +28,10 @@ state.error = action.payload
 })
 
 builders.addCase(UpdateItems.fulfilled,(state,action)=>{
-  console.log(action.payload)
+  
   const{items,quantity} = action.payload
   state.CartItems.push(items)
+
 });
 
 

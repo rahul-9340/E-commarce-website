@@ -29,6 +29,7 @@ function HandleRemove(id){
 dispatch(RemoveItems(id))
 }
 
+
 return (
    <>
   <div className='products'>

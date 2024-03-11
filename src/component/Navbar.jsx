@@ -7,6 +7,7 @@ import { signOut } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import Logout from './Logout'
 import { auth } from '../firebaseConfig'
+import Bar from './Bar'
 export default function Navbar() {
 const {isactive,theme}= useSelector((state)=>state.toggle)
 const dispatch = useDispatch()
@@ -21,6 +22,7 @@ useEffect(() => {
 },[theme]);
 
   return (
+  <>
  <div className='nav-main'>
 <div className='left'>
 <Link className='a' to="/">Home</Link>
@@ -37,11 +39,10 @@ useEffect(() => {
 !user?<Link className='a' to="/login"><button className='login-btn'>Login</button></Link>:
 <Logout/>
 }
-
-
-
 </div>
 </div>
+<Bar/>
+</>
   )
 }
 

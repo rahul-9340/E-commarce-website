@@ -27,7 +27,10 @@ console.log(e)
 
 
 export const UpdateItems = createAsyncThunk("update/items",async(items,thunkAPI)=>{
+  
   const UserId = auth.currentUser.uid
+  if(!UserId)return
+  
 try{
     const docRef = doc(db, "MyCart",UserId)
     const cartDoc = await getDoc(docRef); 
@@ -42,10 +45,11 @@ try{
         [items.id]:1
        } 
     })
+    
 return thunkAPI.fulfillWithValue({items,quantity:1})
 }
 catch(e){
- thunkAPI.rejectWithValue(e)        
+ return thunkAPI.rejectWithValue(e)        
 }      
 })
 
